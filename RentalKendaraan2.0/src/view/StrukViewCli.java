@@ -1,0 +1,19 @@
+package view;
+
+import model.Penyewaan;
+
+public class StrukViewCli implements StrukView {
+    
+    @Override
+    public void cetak(Penyewaan penyewaan) {
+        System.out.println("------------ Struk Penyewaan ------------");
+        System.out.println("No Sewa       : " + penyewaan.getId());
+        System.out.println("Nama Penyewa  : " + penyewaan.getNamaPenyewa());
+        System.out.println("Kendaraan     : " + penyewaan.getKendaraan().getMerk());
+        System.out.println("Plat Nomor    : " + penyewaan.getKendaraan().getPlatNomor());
+        System.out.println("Jenis         : " + penyewaan.getKendaraan().getJenis());
+        System.out.println("Lama Hari     : " + penyewaan.getLamaHari() + " hari");
+        System.out.println("Total Biaya   : " + Format.rupiah(penyewaan.getTotalBiaya()));
+        System.out.println("-----------------------------------------");
+    }
+}
